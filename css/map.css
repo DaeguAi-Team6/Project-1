@@ -1,0 +1,33 @@
+
+* {
+    margin: 0px;
+    padding: 0;
+    border: 0;
+    animation:test 0.5s;
+    /* font-size: 100%;
+    font: inherit;
+    vertical-align: baseline; */ 
+}
+
+
+/* 지도 설정 */
+.map-wrap {
+    margin: 10px;
+    margin-left: 20px;
+    display: flex;
+    /* gap: 90px; */
+}
+
+
+/* 효과 */
+* {
+    animation:test 0.5s;
+}
+
+@keyframes test {
+    0%{opacity:0;}
+    100%{opacity:1;}
+} 
+
+
+
