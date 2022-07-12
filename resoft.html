@@ -14,7 +14,7 @@
     <link rel="stylesheet" href="./css/top.css">
     <link rel="stylesheet" href="./css/footer.css">
     <link rel="stylesheet" href="./css/card.css">
-    
+
     <link rel="stylesheet" type="text/css" href="./css/slide card.css">
     <link rel="stylesheet"  type="text/css" href="./css/slick.css">
     <link rel="stylesheet" type="text/js" href="./css/reset.css">
@@ -27,17 +27,27 @@
     <script src="./js/jquery.bxslider.min.js"></script>
     <script src="./js/wow.min.js"></script>
     <script>
-        new WOW().init();
+    new WOW().init();
     </script> 
-    <!-- <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script> -->
-    <!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script> -->
+    <script type="text/javascript" src="https://dapi.kakao.com/v2/maps/sdk.js?appkey=841c3df5b9304ec5a4a4a954d55bd878"></script>
+    <script charset="UTF-8" src="http://t1.daumcdn.net/mapjsapi/js/main/4.4.5/kakao.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
     <link rel="stylesheet" href="./css/bootstrap.min.css"> 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
     <script src="./js/bootstrap.bundle.js.map"></script>
 </head>
-<body>    
+<body> 
+    
+    <!-- 탑 버튼 시작-->
+    <div id="top">
+        <button class="move">   <!-- 헤더 만드신 분 헤더로 연결시키면 헤더(TOP)로 이동 -->
+            <a href="#"><i class="fa-solid fa-angle-up"></i></a>
+            <p>TOP</p>
+        </button>
+    </div>
+    <!-- 탑 버튼 끝 -->
+    
     <header class="header">
         <div class="wrapper">
             <div class="top_wrap">
@@ -62,7 +72,8 @@
             </div>
         </div>
     </header>   
-    
+
+
     <!-- card섹션 -->
     <div class="wrap">
         <div class="content_wrap">
@@ -166,6 +177,7 @@
         </div>
      </div>
 
+
     <script>
         
         $(document).ready(function () {
@@ -255,13 +267,6 @@ $(".content_slide").stop(true).animate({
 function next(cnt) {
 var move_width = 1910 * cnt;
 
-/* $(".content_slide").stop(true).animate({left : "-="+move_width+"px"}, 500, function() {
-    for(var i=0; i<cnt; i++){
-        $(this).children(":first").insertAfter($(this).children(":last"));
-    }
-    $(this).css({left : "0"});
-}); */
-
 for (var i = 0; i < cnt; i++) {
     $(".content_slide").children(":first").insertAfter($(".content_slide").children(":last"));
 }
@@ -346,14 +351,15 @@ window.location.href = "user/boardDetailDir.action?flag=" + flag + "&idx=" + idx
 		</section>
 	</div>
 </div>
+    
     <div class = "cus_wrap">
         <!-- data-wow-delay : 페이지 로딩 후 애니메이션이 실행되기까지 간격-->
-        <img src = "/image/에코스봇.png" alt ="" class = "ecoce-bot wow fadeInDown" data-wow-delay = "0.3s"> 
+        <img src = "./image/에코스봇.png" alt ="" class = "ecoce-bot wow fadeInDown" data-wow-delay = "0.3s"> 
             
-        <img src = "/image/환경부탄소중립기본법.png" alt = "" class = "ministry-Environ-img wow fadeInRight" data-wow-delay="0.3s">        
+        <img src = "./image/환경부탄소중립기본법.png" alt = "" class = "ministry-Environ-img wow fadeInRight" data-wow-delay="0.3s">        
         
         <div class = "ecoce-img-wrap">
-            <img src = "/image/에코스모바일원.png" alt ="" class="ecoce-img wow fadeInLeft" data-wow-delay="0.3s">
+            <img src = "./image/에코스모바일원.png" alt ="" class="ecoce-img wow fadeInLeft" data-wow-delay="0.3s">
         </div>
             
         <div class = "eco-clean-earth wow fadeInRight" data-wow-delay = "0.6s" >
@@ -664,15 +670,13 @@ window.location.href = "user/boardDetailDir.action?flag=" + flag + "&idx=" + idx
 		e.preventDefault()
 	}
     </script>
-
-
 <!-- 지도 인포  -->
 <div class="container col-xxl-10 py-5">
     <div class="row flex-lg-row-reverse align-items-center ">
         <div class="col-lg-6 col-md-7 py-5">
             <div alt = "" class="container-fluid wow fadeInRight" data-wow-delay="0.5s">
                 <div class="row w-95">
-                    <div class="col-6 col-md-12 ">
+                <div class="col-6 col-md-12 ">
                 <!-- xs  576px 이하는  / 12 분할 -->    
                 <!-- sm  576px 이상은  / 12 분할 --> 
                 <!-- md  768px 이상은  6/ 12 분할 --> 
@@ -695,51 +699,52 @@ window.location.href = "user/boardDetailDir.action?flag=" + flag + "&idx=" + idx
                             (주)리소프트 
                         </p>
                     </div>
-            </div>
-        </div>   
-    </div>
-  <!-- 지도인포 끝 -->
+                </div>
+            </div>   
+        </div>
+<!-- 지도인포 끝 -->
 
 <!-- 지도시작-->  
-<div class="col-lg-6 col-md-7 py-5">      
-    <div class="map-wrap wow fadeIn" data-wow-delay="0.3s">
-        <div id="map" style="width: 100%; height: 700px; position: relative; overflow: hidden; background: url(&quot;http://t1.daumcdn.net/mapjsapi/images/bg_tile.png&quot;);">
-            <div style="position: absolute; left: 0px; top: 0px; width: 100%; height: 100%; touch-action: none; cursor: url(&quot;http://t1.daumcdn.net/mapjsapi/images/cursor/openhand.cur.ico&quot;) 7 5, url(&quot;http://t1.daumcdn.net/mapjsapi/images/cursor/openhand.cur.ico&quot;), default;">
-                <div style="position: absolute;">
-                    <div style="position: absolute; z-index: 0;"></div>
-                    <div style="position: absolute; z-index: 1; left: 0px; top: 0px;">
-                        <img src="http://map2.daumcdn.net/map_2d/2205pfk/L2/2537/2942.png" alt="" draggable="false" style="position: absolute; user-select: none; -webkit-user-drag: none; min-width: 0px; min-height: 0px; max-width: none; max-height: none; left: -65px; top: 727px; opacity: 1; transition-property: opacity; transition-duration: 0.2s; transition-timing-function: ease; width: 256px; height: 256px;">
-                        <img src="http://map3.daumcdn.net/map_2d/2205pfk/L2/2537/2943.png" alt="" draggable="false" style="position: absolute; user-select: none; -webkit-user-drag: none; min-width: 0px; min-height: 0px; max-width: none; max-height: none; left: 191px; top: 727px; opacity: 1; transition-property: opacity; transition-duration: 0.2s; transition-timing-function: ease; width: 256px; height: 256px;">
-                        <img src="http://map0.daumcdn.net/map_2d/2205pfk/L2/2537/2944.png" alt="" draggable="false" style="position: absolute; user-select: none; -webkit-user-drag: none; min-width: 0px; min-height: 0px; max-width: none; max-height: none; left: 447px; top: 727px; opacity: 1; transition-property: opacity; transition-duration: 0.2s; transition-timing-function: ease; width: 256px; height: 256px;">
-                        <img src="http://map1.daumcdn.net/map_2d/2205pfk/L2/2537/2945.png" alt="" draggable="false" style="position: absolute; user-select: none; -webkit-user-drag: none; min-width: 0px; min-height: 0px; max-width: none; max-height: none; left: 703px; top: 727px; opacity: 1; transition-property: opacity; transition-duration: 0.2s; transition-timing-function: ease; width: 256px; height: 256px;">
-                        <img src="http://map2.daumcdn.net/map_2d/2205pfk/L2/2538/2942.png" alt="" draggable="false" style="position: absolute; user-select: none; -webkit-user-drag: none; min-width: 0px; min-height: 0px; max-width: none; max-height: none; left: -65px; top: 471px; opacity: 1; transition-property: opacity; transition-duration: 0.2s; transition-timing-function: ease; width: 256px; height: 256px;">
-                        <img src="http://map3.daumcdn.net/map_2d/2205pfk/L2/2538/2943.png" alt="" draggable="false" style="position: absolute; user-select: none; -webkit-user-drag: none; min-width: 0px; min-height: 0px; max-width: none; max-height: none; left: 191px; top: 471px; opacity: 1; transition-property: opacity; transition-duration: 0.2s; transition-timing-function: ease; width: 256px; height: 256px;">
-                        <img src="http://map0.daumcdn.net/map_2d/2205pfk/L2/2538/2944.png" alt="" draggable="false" style="position: absolute; user-select: none; -webkit-user-drag: none; min-width: 0px; min-height: 0px; max-width: none; max-height: none; left: 447px; top: 471px; opacity: 1; transition-property: opacity; transition-duration: 0.2s; transition-timing-function: ease; width: 256px; height: 256px;">
-                        <img src="http://map1.daumcdn.net/map_2d/2205pfk/L2/2538/2945.png" alt="" draggable="false" style="position: absolute; user-select: none; -webkit-user-drag: none; min-width: 0px; min-height: 0px; max-width: none; max-height: none; left: 703px; top: 471px; opacity: 1; transition-property: opacity; transition-duration: 0.2s; transition-timing-function: ease; width: 256px; height: 256px;">
-                        <img src="http://map2.daumcdn.net/map_2d/2205pfk/L2/2539/2942.png" alt="" draggable="false" style="position: absolute; user-select: none; -webkit-user-drag: none; min-width: 0px; min-height: 0px; max-width: none; max-height: none; left: -65px; top: 215px; opacity: 1; transition-property: opacity; transition-duration: 0.2s; transition-timing-function: ease; width: 256px; height: 256px;">
-                        <img src="http://map3.daumcdn.net/map_2d/2205pfk/L2/2539/2943.png" alt="" draggable="false" style="position: absolute; user-select: none; -webkit-user-drag: none; min-width: 0px; min-height: 0px; max-width: none; max-height: none; left: 191px; top: 215px; opacity: 1; transition-property: opacity; transition-duration: 0.2s; transition-timing-function: ease; width: 256px; height: 256px;">
-                        <img src="http://map0.daumcdn.net/map_2d/2205pfk/L2/2539/2944.png" alt="" draggable="false" style="position: absolute; user-select: none; -webkit-user-drag: none; min-width: 0px; min-height: 0px; max-width: none; max-height: none; left: 447px; top: 215px; opacity: 1; transition-property: opacity; transition-duration: 0.2s; transition-timing-function: ease; width: 256px; height: 256px;">
-                        <img src="http://map1.daumcdn.net/map_2d/2205pfk/L2/2539/2945.png" alt="" draggable="false" style="position: absolute; user-select: none; -webkit-user-drag: none; min-width: 0px; min-height: 0px; max-width: none; max-height: none; left: 703px; top: 215px; opacity: 1; transition-property: opacity; transition-duration: 0.2s; transition-timing-function: ease; width: 256px; height: 256px;">
-                        <img src="http://map2.daumcdn.net/map_2d/2205pfk/L2/2540/2942.png" alt="" draggable="false" style="position: absolute; user-select: none; -webkit-user-drag: none; min-width: 0px; min-height: 0px; max-width: none; max-height: none; left: -65px; top: -41px; opacity: 1; transition-property: opacity; transition-duration: 0.2s; transition-timing-function: ease; width: 256px; height: 256px;">
-                        <img src="http://map3.daumcdn.net/map_2d/2205pfk/L2/2540/2943.png" alt="" draggable="false" style="position: absolute; user-select: none; -webkit-user-drag: none; min-width: 0px; min-height: 0px; max-width: none; max-height: none; left: 191px; top: -41px; opacity: 1; transition-property: opacity; transition-duration: 0.2s; transition-timing-function: ease; width: 256px; height: 256px;">
-                        <img src="http://map0.daumcdn.net/map_2d/2205pfk/L2/2540/2944.png" alt="" draggable="false" style="position: absolute; user-select: none; -webkit-user-drag: none; min-width: 0px; min-height: 0px; max-width: none; max-height: none; left: 447px; top: -41px; opacity: 1; transition-property: opacity; transition-duration: 0.2s; transition-timing-function: ease; width: 256px; height: 256px;">
-                        <img src="http://map1.daumcdn.net/map_2d/2205pfk/L2/2540/2945.png" alt="" draggable="false" style="position: absolute; user-select: none; -webkit-user-drag: none; min-width: 0px; min-height: 0px; max-width: none; max-height: none; left: 703px; top: -41px; opacity: 1; transition-property: opacity; transition-duration: 0.2s; transition-timing-function: ease; width: 256px; height: 256px;">
-                        <img src="http://map2.daumcdn.net/map_2d/2205pfk/L2/2541/2942.png" alt="" draggable="false" style="position: absolute; user-select: none; -webkit-user-drag: none; min-width: 0px; min-height: 0px; max-width: none; max-height: none; left: -65px; top: -297px; opacity: 1; transition-property: opacity; transition-duration: 0.2s; transition-timing-function: ease; width: 256px; height: 256px;">
-                        <img src="http://map3.daumcdn.net/map_2d/2205pfk/L2/2541/2943.png" alt="" draggable="false" style="position: absolute; user-select: none; -webkit-user-drag: none; min-width: 0px; min-height: 0px; max-width: none; max-height: none; left: 191px; top: -297px; opacity: 1; transition-property: opacity; transition-duration: 0.2s; transition-timing-function: ease; width: 256px; height: 256px;">
-                        <img src="http://map0.daumcdn.net/map_2d/2205pfk/L2/2541/2944.png" alt="" draggable="false" style="position: absolute; user-select: none; -webkit-user-drag: none; min-width: 0px; min-height: 0px; max-width: none; max-height: none; left: 447px; top: -297px; opacity: 1; transition-property: opacity; transition-duration: 0.2s; transition-timing-function: ease; width: 256px; height: 256px;">
-                        <img src="http://map1.daumcdn.net/map_2d/2205pfk/L2/2541/2945.png" alt="" draggable="false" style="position: absolute; user-select: none; -webkit-user-drag: none; min-width: 0px; min-height: 0px; max-width: none; max-height: none; left: 703px; top: -297px; opacity: 1; transition-property: opacity; transition-duration: 0.2s; transition-timing-function: ease; width: 256px; height: 256px;">
-                        <img src="http://map2.daumcdn.net/map_2d/2205pfk/L2/2537/2946.png" alt="" draggable="false" style="position: absolute; user-select: none; -webkit-user-drag: none; min-width: 0px; min-height: 0px; max-width: none; max-height: none; left: 959px; top: 727px; opacity: 1; transition-property: opacity; transition-duration: 0.2s; transition-timing-function: ease; width: 256px; height: 256px;">
-                        <img src="http://map2.daumcdn.net/map_2d/2205pfk/L2/2538/2946.png" alt="" draggable="false" style="position: absolute; user-select: none; -webkit-user-drag: none; min-width: 0px; min-height: 0px; max-width: none; max-height: none; left: 959px; top: 471px; opacity: 1; transition-property: opacity; transition-duration: 0.2s; transition-timing-function: ease; width: 256px; height: 256px;">
-                        <img src="http://map2.daumcdn.net/map_2d/2205pfk/L2/2539/2946.png" alt="" draggable="false" style="position: absolute; user-select: none; -webkit-user-drag: none; min-width: 0px; min-height: 0px; max-width: none; max-height: none; left: 959px; top: 215px; opacity: 1; transition-property: opacity; transition-duration: 0.2s; transition-timing-function: ease; width: 256px; height: 256px;">
-                        <img src="http://map2.daumcdn.net/map_2d/2205pfk/L2/2540/2946.png" alt="" draggable="false" style="position: absolute; user-select: none; -webkit-user-drag: none; min-width: 0px; min-height: 0px; max-width: none; max-height: none; left: 959px; top: -41px; opacity: 1; transition-property: opacity; transition-duration: 0.2s; transition-timing-function: ease; width: 256px; height: 256px;">
-                        <img src="http://map2.daumcdn.net/map_2d/2205pfk/L2/2541/2946.png" alt="" draggable="false" style="position: absolute; user-select: none; -webkit-user-drag: none; min-width: 0px; min-height: 0px; max-width: none; max-height: none; left: 959px; top: -297px; opacity: 1; transition-property: opacity; transition-duration: 0.2s; transition-timing-function: ease; width: 256px; height: 256px;">
-                    </div>
-                    <div style="position: absolute; z-index: 1;"></div>
-                    <div style="position: absolute; z-index: 1; width: 950px; height: 800px;"></div>
-                    <div style="position: absolute; z-index: 1;">
-                        <svg version="1.1" style="stroke: none; stroke-dashoffset: 0.5; stroke-linejoin: round; fill: none; transform: translateZ(0px); position: absolute; left: -1900px; top: -1600px; width: 4750px; height: 4000px;" viewBox="0 0 4750 4000">
-                            <defs></defs>
-                        </svg>
+        <div class="col-lg-6 col-md-7 py-5">      
+            <div class="map-wrap wow fadeIn" data-wow-delay="0.3s">
+                <div id="map" style="width: 100%; height: 700px; position: relative; overflow: hidden; background: url(&quot;http://t1.daumcdn.net/mapjsapi/images/bg_tile.png&quot;);">
+            <!-- <div style="position: absolute; left: 0px; top: 0px; width: 100%; height: 100%; touch-action: none; cursor: url(&quot;http://t1.daumcdn.net/mapjsapi/images/cursor/openhand.cur.ico&quot;) 7 5, url(&quot;http://t1.daumcdn.net/mapjsapi/images/cursor/openhand.cur.ico&quot;), default;"> -->
+                    <div style="position: absolute;">
+                        <div style="position: absolute; z-index: 0;"></div>
+                        <div style="position: absolute; z-index: 1; left: 0px; top: 0px;">
+                            <img src="http://map2.daumcdn.net/map_2d/2205pfk/L2/2537/2942.png" alt="" draggable="false" style="position: absolute; user-select: none; -webkit-user-drag: none; min-width: 0px; min-height: 0px; max-width: none; max-height: none; left: -65px; top: 727px; opacity: 1; transition-property: opacity; transition-duration: 0.2s; transition-timing-function: ease; width: 256px; height: 256px;">
+                            <img src="http://map3.daumcdn.net/map_2d/2205pfk/L2/2537/2943.png" alt="" draggable="false" style="position: absolute; user-select: none; -webkit-user-drag: none; min-width: 0px; min-height: 0px; max-width: none; max-height: none; left: 191px; top: 727px; opacity: 1; transition-property: opacity; transition-duration: 0.2s; transition-timing-function: ease; width: 256px; height: 256px;">
+                            <img src="http://map0.daumcdn.net/map_2d/2205pfk/L2/2537/2944.png" alt="" draggable="false" style="position: absolute; user-select: none; -webkit-user-drag: none; min-width: 0px; min-height: 0px; max-width: none; max-height: none; left: 447px; top: 727px; opacity: 1; transition-property: opacity; transition-duration: 0.2s; transition-timing-function: ease; width: 256px; height: 256px;">
+                            <img src="http://map1.daumcdn.net/map_2d/2205pfk/L2/2537/2945.png" alt="" draggable="false" style="position: absolute; user-select: none; -webkit-user-drag: none; min-width: 0px; min-height: 0px; max-width: none; max-height: none; left: 703px; top: 727px; opacity: 1; transition-property: opacity; transition-duration: 0.2s; transition-timing-function: ease; width: 256px; height: 256px;">
+                            <img src="http://map2.daumcdn.net/map_2d/2205pfk/L2/2538/2942.png" alt="" draggable="false" style="position: absolute; user-select: none; -webkit-user-drag: none; min-width: 0px; min-height: 0px; max-width: none; max-height: none; left: -65px; top: 471px; opacity: 1; transition-property: opacity; transition-duration: 0.2s; transition-timing-function: ease; width: 256px; height: 256px;">
+                            <img src="http://map3.daumcdn.net/map_2d/2205pfk/L2/2538/2943.png" alt="" draggable="false" style="position: absolute; user-select: none; -webkit-user-drag: none; min-width: 0px; min-height: 0px; max-width: none; max-height: none; left: 191px; top: 471px; opacity: 1; transition-property: opacity; transition-duration: 0.2s; transition-timing-function: ease; width: 256px; height: 256px;">
+                            <img src="http://map0.daumcdn.net/map_2d/2205pfk/L2/2538/2944.png" alt="" draggable="false" style="position: absolute; user-select: none; -webkit-user-drag: none; min-width: 0px; min-height: 0px; max-width: none; max-height: none; left: 447px; top: 471px; opacity: 1; transition-property: opacity; transition-duration: 0.2s; transition-timing-function: ease; width: 256px; height: 256px;">
+                            <img src="http://map1.daumcdn.net/map_2d/2205pfk/L2/2538/2945.png" alt="" draggable="false" style="position: absolute; user-select: none; -webkit-user-drag: none; min-width: 0px; min-height: 0px; max-width: none; max-height: none; left: 703px; top: 471px; opacity: 1; transition-property: opacity; transition-duration: 0.2s; transition-timing-function: ease; width: 256px; height: 256px;">
+                            <img src="http://map2.daumcdn.net/map_2d/2205pfk/L2/2539/2942.png" alt="" draggable="false" style="position: absolute; user-select: none; -webkit-user-drag: none; min-width: 0px; min-height: 0px; max-width: none; max-height: none; left: -65px; top: 215px; opacity: 1; transition-property: opacity; transition-duration: 0.2s; transition-timing-function: ease; width: 256px; height: 256px;">
+                            <img src="http://map3.daumcdn.net/map_2d/2205pfk/L2/2539/2943.png" alt="" draggable="false" style="position: absolute; user-select: none; -webkit-user-drag: none; min-width: 0px; min-height: 0px; max-width: none; max-height: none; left: 191px; top: 215px; opacity: 1; transition-property: opacity; transition-duration: 0.2s; transition-timing-function: ease; width: 256px; height: 256px;">
+                            <img src="http://map0.daumcdn.net/map_2d/2205pfk/L2/2539/2944.png" alt="" draggable="false" style="position: absolute; user-select: none; -webkit-user-drag: none; min-width: 0px; min-height: 0px; max-width: none; max-height: none; left: 447px; top: 215px; opacity: 1; transition-property: opacity; transition-duration: 0.2s; transition-timing-function: ease; width: 256px; height: 256px;">
+                            <img src="http://map1.daumcdn.net/map_2d/2205pfk/L2/2539/2945.png" alt="" draggable="false" style="position: absolute; user-select: none; -webkit-user-drag: none; min-width: 0px; min-height: 0px; max-width: none; max-height: none; left: 703px; top: 215px; opacity: 1; transition-property: opacity; transition-duration: 0.2s; transition-timing-function: ease; width: 256px; height: 256px;">
+                            <img src="http://map2.daumcdn.net/map_2d/2205pfk/L2/2540/2942.png" alt="" draggable="false" style="position: absolute; user-select: none; -webkit-user-drag: none; min-width: 0px; min-height: 0px; max-width: none; max-height: none; left: -65px; top: -41px; opacity: 1; transition-property: opacity; transition-duration: 0.2s; transition-timing-function: ease; width: 256px; height: 256px;">
+                            <img src="http://map3.daumcdn.net/map_2d/2205pfk/L2/2540/2943.png" alt="" draggable="false" style="position: absolute; user-select: none; -webkit-user-drag: none; min-width: 0px; min-height: 0px; max-width: none; max-height: none; left: 191px; top: -41px; opacity: 1; transition-property: opacity; transition-duration: 0.2s; transition-timing-function: ease; width: 256px; height: 256px;">
+                            <img src="http://map0.daumcdn.net/map_2d/2205pfk/L2/2540/2944.png" alt="" draggable="false" style="position: absolute; user-select: none; -webkit-user-drag: none; min-width: 0px; min-height: 0px; max-width: none; max-height: none; left: 447px; top: -41px; opacity: 1; transition-property: opacity; transition-duration: 0.2s; transition-timing-function: ease; width: 256px; height: 256px;">
+                            <img src="http://map1.daumcdn.net/map_2d/2205pfk/L2/2540/2945.png" alt="" draggable="false" style="position: absolute; user-select: none; -webkit-user-drag: none; min-width: 0px; min-height: 0px; max-width: none; max-height: none; left: 703px; top: -41px; opacity: 1; transition-property: opacity; transition-duration: 0.2s; transition-timing-function: ease; width: 256px; height: 256px;">
+                            <img src="http://map2.daumcdn.net/map_2d/2205pfk/L2/2541/2942.png" alt="" draggable="false" style="position: absolute; user-select: none; -webkit-user-drag: none; min-width: 0px; min-height: 0px; max-width: none; max-height: none; left: -65px; top: -297px; opacity: 1; transition-property: opacity; transition-duration: 0.2s; transition-timing-function: ease; width: 256px; height: 256px;">
+                            <img src="http://map3.daumcdn.net/map_2d/2205pfk/L2/2541/2943.png" alt="" draggable="false" style="position: absolute; user-select: none; -webkit-user-drag: none; min-width: 0px; min-height: 0px; max-width: none; max-height: none; left: 191px; top: -297px; opacity: 1; transition-property: opacity; transition-duration: 0.2s; transition-timing-function: ease; width: 256px; height: 256px;">
+                            <img src="http://map0.daumcdn.net/map_2d/2205pfk/L2/2541/2944.png" alt="" draggable="false" style="position: absolute; user-select: none; -webkit-user-drag: none; min-width: 0px; min-height: 0px; max-width: none; max-height: none; left: 447px; top: -297px; opacity: 1; transition-property: opacity; transition-duration: 0.2s; transition-timing-function: ease; width: 256px; height: 256px;">
+                            <img src="http://map1.daumcdn.net/map_2d/2205pfk/L2/2541/2945.png" alt="" draggable="false" style="position: absolute; user-select: none; -webkit-user-drag: none; min-width: 0px; min-height: 0px; max-width: none; max-height: none; left: 703px; top: -297px; opacity: 1; transition-property: opacity; transition-duration: 0.2s; transition-timing-function: ease; width: 256px; height: 256px;">
+                            <img src="http://map2.daumcdn.net/map_2d/2205pfk/L2/2537/2946.png" alt="" draggable="false" style="position: absolute; user-select: none; -webkit-user-drag: none; min-width: 0px; min-height: 0px; max-width: none; max-height: none; left: 959px; top: 727px; opacity: 1; transition-property: opacity; transition-duration: 0.2s; transition-timing-function: ease; width: 256px; height: 256px;">
+                            <img src="http://map2.daumcdn.net/map_2d/2205pfk/L2/2538/2946.png" alt="" draggable="false" style="position: absolute; user-select: none; -webkit-user-drag: none; min-width: 0px; min-height: 0px; max-width: none; max-height: none; left: 959px; top: 471px; opacity: 1; transition-property: opacity; transition-duration: 0.2s; transition-timing-function: ease; width: 256px; height: 256px;">
+                            <img src="http://map2.daumcdn.net/map_2d/2205pfk/L2/2539/2946.png" alt="" draggable="false" style="position: absolute; user-select: none; -webkit-user-drag: none; min-width: 0px; min-height: 0px; max-width: none; max-height: none; left: 959px; top: 215px; opacity: 1; transition-property: opacity; transition-duration: 0.2s; transition-timing-function: ease; width: 256px; height: 256px;">
+                            <img src="http://map2.daumcdn.net/map_2d/2205pfk/L2/2540/2946.png" alt="" draggable="false" style="position: absolute; user-select: none; -webkit-user-drag: none; min-width: 0px; min-height: 0px; max-width: none; max-height: none; left: 959px; top: -41px; opacity: 1; transition-property: opacity; transition-duration: 0.2s; transition-timing-function: ease; width: 256px; height: 256px;">
+                            <img src="http://map2.daumcdn.net/map_2d/2205pfk/L2/2541/2946.png" alt="" draggable="false" style="position: absolute; user-select: none; -webkit-user-drag: none; min-width: 0px; min-height: 0px; max-width: none; max-height: none; left: 959px; top: -297px; opacity: 1; transition-property: opacity; transition-duration: 0.2s; transition-timing-function: ease; width: 256px; height: 256px;">
+                        </div>
+                        <div style="position: absolute; z-index: 1;"></div>
+                        <div style="position: absolute; z-index: 1; width: 950px; height: 800px;"></div>
+                        <div style="position: absolute; z-index: 1;">
+                            <svg version="1.1" style="stroke: none; stroke-dashoffset: 0.5; stroke-linejoin: round; fill: none; transform: translateZ(0px); position: absolute; left: -1900px; top: -1600px; width: 4750px; height: 4000px;" viewBox="0 0 4750 4000">
+                                <defs></defs>
+                            </svg>
+                        </div>
                     </div>
                     <div style="position: absolute; z-index: 1; width: 100%; height: 0px; transform: translateZ(0px);">
                         <div style="position: absolute; margin: -69px 0px 0px -27px; z-index: 0; left: 295px; top: 400px;">
@@ -764,39 +769,41 @@ window.location.href = "user/boardDetailDir.action?flag=" + flag + "&idx=" + idx
         </div>
     </div>
 </div>
-        <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=841c3df5b9304ec5a4a4a954d55bd878"></script>
-        <script charset="UTF-8" src="http://t1.daumcdn.net/mapjsapi/js/main/4.4.5/kakao.js"></script>
-          
-        <script>
-            // 카카오 지도 api
-            var container = document.getElementById('map'); //지도를 담을 영역의 DOM 레퍼런스
-            var options = { //지도를 생성할 때 필요한 기본 옵션
-                center: new kakao.maps.LatLng(35.871691843254716, 128.62496478375644), //지도의 중심좌표.
-                level: 2 //지도의 레벨(확대, 축소 정도)
-            };
-            var map = new kakao.maps.Map(container, options); //지도 생성 및 객체 리턴
-            // 마커가 표시될 위치입니다 
-            var markerPosition = new kakao.maps.LatLng(35.871691843254716, 128.62496478375644);
-           
-            var imageSrc = './리소프트 홈페이지 이미지/지도마커.png', // 마커이미지의 주소입니다    
-                imageSize = new kakao.maps.Size(220, 45), // 마커이미지의 크기입니다
-                imageOption = { offset: new kakao.maps.Point(27, 69) }; // 마커이미지의 옵션입니다. 마커의 좌표와 일치시킬 이미지 안에서의 좌표를 설정합니다.
-          
-              // 마커의 이미지정보를 가지고 있는 마커이미지를 생성합니다
-            var markerImage = new kakao.maps.MarkerImage(imageSrc, imageSize, imageOption),
-                markerPosition = new kakao.maps.LatLng(35.871691843254716, 128.62496478375644); // 마커가 표시될 위치입니다
-          
-              // 마커를 생성합니다
-            var marker = new kakao.maps.Marker({
-                position: markerPosition,
-                image: markerImage
-            });
-          
-              // 마커가 지도 위에 표시되도록 설정합니다
-            marker.setMap(map);
-          
-        </script>
+
 <!-- 지도 끝-->
+
+
+<script>
+    // 카카오 지도 api
+    var container = document.getElementById('map'); //지도를 담을 영역의 DOM 레퍼런스
+    var options = { //지도를 생성할 때 필요한 기본 옵션
+        center: new kakao.maps.LatLng(35.871691843254716, 128.62496478375644), //지도의 중심좌표.
+        level: 2 //지도의 레벨(확대, 축소 정도)
+    };
+    var map = new kakao.maps.Map(container, options); //지도 생성 및 객체 리턴
+    // 마커가 표시될 위치입니다 
+    var markerPosition = new kakao.maps.LatLng(35.871691843254716, 128.62496478375644);
+   
+    var imageSrc = './리소프트 홈페이지 이미지/지도마커.png', // 마커이미지의 주소입니다    
+        imageSize = new kakao.maps.Size(220, 45), // 마커이미지의 크기입니다
+        imageOption = { offset: new kakao.maps.Point(27, 69) }; // 마커이미지의 옵션입니다. 마커의 좌표와 일치시킬 이미지 안에서의 좌표를 설정합니다.
+  
+      // 마커의 이미지정보를 가지고 있는 마커이미지를 생성합니다
+    var markerImage = new kakao.maps.MarkerImage(imageSrc, imageSize, imageOption),
+        markerPosition = new kakao.maps.LatLng(35.871691843254716, 128.62496478375644); // 마커가 표시될 위치입니다
+  
+      // 마커를 생성합니다
+    var marker = new kakao.maps.Marker({
+        position: markerPosition,
+        image: markerImage
+    });
+  
+      // 마커가 지도 위에 표시되도록 설정합니다
+    marker.setMap(map);
+  
+</script>
+
+
 
 <footer>
     <div class="footer-wrap">
@@ -828,15 +835,5 @@ window.location.href = "user/boardDetailDir.action?flag=" + flag + "&idx=" + idx
         </div>
     </div>
 </footer>
-
-<!-- 탑 버튼 시작-->
-<div id="top">
-    <button class="move">   <!-- 헤더 만드신 분 헤더로 연결시키면 헤더(TOP)로 이동 -->
-        <a href="#header"><i class="fa-solid fa-angle-up"></i></a>
-        <p>TOP</p>
-    </button>
-</div>
-<!-- 탑 버튼 끝 -->
-
 </body>
 </html>
