@@ -6,9 +6,10 @@
 }
 
 .indexKakaoMap{
-    width: 60%;
-    height: 45vw;
+    width: 75%;
+    height: 650px;
     max-width: 1400px;
+    margin-left: 30px;
     position:relative;
     overflow:hidden; 
     background: url("http://t1.daumcdn.net/mapjsapi/images/2x/bg_tile.png"); 
@@ -25,7 +26,8 @@
     display: flex;
     flex-direction: column;
     font-size: 18px;
-    margin-top: 65px;
+    margin-top: 67px;
+    margin-left: 10px;
     visibility:visible;
 }
 
@@ -37,11 +39,10 @@
 }
 
 .map-wrap .map-info-wrap .map-info-p{
-    
+    color: #7b7b7b;
     font-weight: 549;
     font-size: 18px;
     line-height: 25px;
-    color: #7b7b7b;
     padding-bottom: 20px;
     text-align: left;
     
@@ -63,6 +64,7 @@
 
 @media screen and (max-width:1217px){
     .indexKakaoMap{
+        width: 52%;
         height: 650px;
     }
     
@@ -97,7 +99,6 @@
     .map-wrap{
     flex-direction: column-reverse;
     margin: 0;
-    margin-bottom: 300px;
     align-items: center;
     }
     .map-wrap .map-info-wrap{
@@ -109,7 +110,6 @@
     }
     .map-wrap .map-info-wrap .map-info{
     width: 50%;
-    margin-bottom: 50px;
     }
 
     .map-wrap .map-info-wrap .map-info-p{
