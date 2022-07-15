@@ -60,12 +60,12 @@ ul, ol{
 
     font-size: 23px;
     margin: 10px 0; 
-    font-weight: 600; 
+    font-weight: 500; 
     color: #2e2e2e;}
 
 .subTitle {
     text-align: center; 
-    color: pink; 
+    color: #ee72d8; 
     font-weight: 600; 
     font-size: 15px; 
     letter-spacing: 3px;
