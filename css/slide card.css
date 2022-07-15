@@ -8,7 +8,7 @@
         font-weight: 600;
         letter-spacing: -0.4px;
         line-height: 1.5;
-    }
+        }
  .cont {
     display: flex;
     flex-direction: column;
@@ -17,6 +17,13 @@
     height: 100%;
     vertical-align: top;
     padding: 40px 38px;
+    }
+
+
+ .new_img .logo {
+        width: 100%;
+        height: 100%;
+        align-self: flex-end;
     }
 .container_slide a{
     text-decoration: none;
